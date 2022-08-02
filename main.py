@@ -6,6 +6,9 @@ import os
 
 
 def print_hi(name):
+    print('\n\n')
+    pause = ('spotify pause')
+    os.system(str(pause))
     # Use a breakpoint in the code line below to debug your script.
     print(f'\n\n\n-----------------------------------------------------------')
     print(f'\tPress ENTER to Generate Random Album')
@@ -13,6 +16,7 @@ def print_hi(name):
     print( f'\n\t\tFind Album by Decade')
     print(f'\n\t1 - 1950s | 2 - 1960s | 3 - 1970s | 4 - 1980s')
     print( f'\t5 - 1990s | 6 - 2000s | 7 - 2010s | 8 - 2020s')
+    print(f'\n\tPress "B" for no Jazz or Bob Dylan')
     print(f'-----------------------------------------------------------\n\n\n')
 
     keystroke = str(input())# Press Ctrl+F8 to toggle the breakpoint.
@@ -37,7 +41,7 @@ def print_hi(name):
     import pandas as pd
     import random
 
-    data = pd.read_csv (r'C:\Users\jrt15\PycharmProjects\pythonProject\AOTYdata.csv')
+    data = pd.read_csv (r'C:\Users\jrt15\PycharmProjects\album-finder\AOTYdata.csv')
     df = pd.DataFrame(data)
 
     # Get Index
@@ -58,9 +62,10 @@ def print_hi(name):
                 print(*df.iloc[index, 0:4], sep='\n')
                 break
             i += 1
-
+    print('\n\n')
     album = str(df.iloc[index, 1])
-    command = ('spotify play --album ' + album)
+    artist = str(df.iloc[index, 0])
+    command = ('spotify play --album ' + album + ' ' + artist)
     os.system(str(command))
 
     print(f'\n\n\n-------------------------------------------------------------')
