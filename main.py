@@ -16,7 +16,6 @@ def print_hi(name):
     print( f'\n\t\tFind Album by Decade')
     print(f'\n\t1 - 1950s | 2 - 1960s | 3 - 1970s | 4 - 1980s')
     print( f'\t5 - 1990s | 6 - 2000s | 7 - 2010s | 8 - 2020s')
-    print(f'\n\tPress "B" for no Jazz or Bob Dylan')
     print(f'-----------------------------------------------------------\n\n\n')
 
     keystroke = str(input())# Press Ctrl+F8 to toggle the breakpoint.
