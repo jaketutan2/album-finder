@@ -2,6 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import os
 
 
 def print_hi(name):
@@ -57,6 +58,10 @@ def print_hi(name):
                 print(*df.iloc[index, 0:4], sep='\n')
                 break
             i += 1
+
+    album = str(df.iloc[index, 1])
+    command = ('spotify play --album ' + album)
+    os.system(str(command))
 
     print(f'\n\n\n-------------------------------------------------------------')
 
